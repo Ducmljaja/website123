@@ -1,0 +1,96 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+
+# Thiết lập figure
+fig, ax = plt.subplots(figsize=(12, 12))
+ax.set_xlim(-15, 15)
+ax.set_ylim(-15, 15)
+ax.set_aspect('equal')
+ax.axis('off')
+ax.set_facecolor('lightblue')
+
+# Vẽ cánh hoa hướng dương
+def draw_petal(ax, angle, radius, color):
+    # Tọa độ cho cánh hoa
+    angles = np.linspace(angle - 0.2, angle + 0.2, 50)
+    r = radius * (1 + 0.3 * np.cos(5 * (angles - angle)))
+    
+    x = r * np.cos(angles)
+    y = r * np.sin(angles)
+    
+    ax.fill(x, y, color=color, alpha=0.8, edgecolor='orange', linewidth=1)
+
+# Vẽ các cánh hoa
+n_petals = 16
+for i in range(n_petals):
+    angle = 2 * math.pi * i / n_petals
+    draw_petal(ax, angle, 8, 'gold')
+
+# Vẽ trung tâm hoa với pattern xoắn ốc
+center_angles = np.linspace(0, 8*math.pi, 500)
+spiral_r = np.linspace(0, 4, 500)
+
+# Tạo pattern seeds ở trung tâm
+for i in range(len(center_angles)):
+    if i % 8 == 0:  # Chỉ vẽ mỗi 8 điểm
+        x = spiral_r[i] * np.cos(center_angles[i])
+        y = spiral_r[i] * np.sin(center_angles[i])
+        size = 50 - spiral_r[i] * 8
+        ax.scatter(x, y, s=size, c='saddlebrown', alpha=0.8)
+
+# Vẽ thân cây
+stem_x = [0, 0, -0.5, 0.5, 0]
+stem_y = [-8, -15, -12, -12, -15]
+ax.plot(stem_x, stem_y, color='darkgreen', linewidth=8)
+
+# Vẽ lá
+def draw_leaf(ax, x, y, angle, size):
+    leaf_angles = np.linspace(0, math.pi, 30)
+    leaf_x = x + size * np.cos(leaf_angles + angle) * np.sin(leaf_angles)
+    leaf_y = y + size * np.sin(leaf_angles + angle) * np.sin(leaf_angles)
+    ax.fill(leaf_x, leaf_y, color='forestgreen', alpha=0.7, edgecolor='darkgreen')
+
+# Thêm lá vào thân
+draw_leaf(ax, -2, -10, math.pi/6, 3)
+draw_leaf(ax, 2, -12, -math.pi/6, 2.5)
+
+# Vẽ mây
+def draw_cloud(ax, x, y, size):
+    circles = [(0, 0, size), (-size*0.7, 0, size*0.8), (size*0.7, 0, size*0.8),
+               (-size*0.4, size*0.5, size*0.6), (size*0.4, size*0.5, size*0.6)]
+    
+    for cx, cy, r in circles:
+        circle = plt.Circle((x + cx, y + cy), r, color='white', alpha=0.8)
+        ax.add_patch(circle)
+
+# Thêm mây vào bầu trời
+draw_cloud(ax, -10, 10, 1.5)
+draw_cloud(ax, 8, 12, 1.2)
+draw_cloud(ax, -6, 13, 1.0)
+
+# Vẽ mặt trời nhỏ
+sun_x, sun_y = 10, 10
+sun_circle = plt.Circle((sun_x, sun_y), 1.5, color='yellow', alpha=0.9)
+ax.add_patch(sun_circle)
+
+# Tia nắng
+for i in range(8):
+    angle = 2 * math.pi * i / 8
+    x1 = sun_x + 1.8 * math.cos(angle)
+    y1 = sun_y + 1.8 * math.sin(angle)
+    x2 = sun_x + 2.5 * math.cos(angle)
+    y2 = sun_y + 2.5 * math.sin(angle)
+    ax.plot([x1, x2], [y1, y2], color='gold', linewidth=3)
+
+# Thêm tiêu đề
+ax.text(0, -18, '🌻 Hoa Hướng Dương 🌻', fontsize=24, ha='center', 
+        fontweight='bold', color='darkgreen')
+
+plt.tight_layout()
+plt.show()
+
+# Lưu hình
+plt.savefig('hoa_huong_duong.png', dpi=300, bbox_inches='tight', 
+            facecolor='lightblue', edgecolor='none')
+print("Đã lưu hình vào file 'hoa_huong_duong.png'")

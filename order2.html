@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenovo LOQ - Cửa Hàng Điện Tử</title>
+    <link rel="icon" href="images/logo.png" type="Images/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --pink: #0099FF;
+            --primary-color: #0099FF;
+            --secondary-color: #dc1b57;
+            --accent-color: #FFB800;
+            --light-bg: #f9f9f9;
+            --dark-text: #333;
+            --light-text: #666;
+            --border-color: #ddd;
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            transition: all .2s linear
+        }
+
+        *::selection {
+            background: var(--pink);
+            color: white;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 7rem;
+        }
+
+        .m:hover {
+            color: #0099FF;
+        }
+
+        .header-1,
+        .header-2,
+        .header-3 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 9%;
+            background: var(--pink);
+        }
+
+        .navbar a {
+            padding: 14px 20px;
+            display: inline-block;
+            color: black;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #f5f5f5;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .icons a {
+            text-decoration: none;
+            color: #000;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            min-width: 180px;
+            border-radius: 4px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .show {
+            display: block;
+        }
+
+        /* Responsive layout */
+        @media screen and (max-width: 600px) {
+            .icons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .icons a {
+                margin: 5px 0;
+            }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+        }
+
+        .header-1 {
+            border-bottom: .1rem solid rgba(255, 255, 255, .2)
+        }
+
+        .header-3 {
+            background: white;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+            position: relative;
+            z-index: 10000;
+        }
+
+        .header-1 span {
+            font-weight: lighter;
+            color: white;
+            font-size: 1.7rem;
+        }
+
+        .header-1 a {
+            padding: 0 .7rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .header-1 a:hover {
+            color: yellow;
+
+        }
+
+        .header-2 .search-bar-container {
+            display: flex;
+            align-items: center;
+            width: 50rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, .2);
+            border-radius: .5rem;
+
+        }
+
+        .header-2 .search-bar-container #search-bar {
+            width: 100%;
+            background: none;
+            text-transform: none;
+            color: white;
+            font-size: 1.7rem;
+
+        }
+
+        .header-2 .search-bar-container #search-bar::placeholder {
+            text-transform: capitalize;
+            color: #ddd;
+
+        }
+
+        .header-2 .search-bar-container label {
+            color: white;
+            cursor: pointer;
+            font-size: 2rem;
+            padding: 0 .5rem;
+
+        }
+
+        .header-2 .search-bar-container label:hover {
+            color: yellow;
+        }
+
+        .header-3 .navbar a {
+            color: #333;
+            font-size: 2rem;
+            margin-right: 2rem;
+        }
+
+        .header-3 .icons a {
+            color: #333;
+            font-size: 2.5rem;
+            margin-right: 2rem;
+        }
+
+        .header-3 a:hover {
+            color: var(--pink);
+        }
+
+        #menu-bar {
+            font-size: 3rem;
+            color: #333;
+            border: .1rem solid #333;
+            border-radius: .5rem;
+            padding: .5rem 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        .header-notice {
+            text-transform: uppercase;
+            text-align: center;
+            padding: 6px;
+            margin-bottom: 0;
+            color: red;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: var(--dark-text);
+        }
+
+        /* Product page main container */
+        .product-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Breadcrumb navigation */
+        .breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .breadcrumb li {
+            display: inline;
+        }
+
+        .breadcrumb li+li:before {
+            content: ">";
+            padding: 0 10px;
+            color: var(--light-text);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Product main content */
+        .product-main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* Product gallery */
+        .product-gallery {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 4px;
+            cursor: pointer;
+            object-fit: cover;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Product info section */
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-name {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .product-ratings {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .stars {
+            color: #FFB800;
+            font-size: 1.8rem;
+            margin-right: 10px;
+        }
+
+        .review-count {
+            font-size: 1.5rem;
+            color: var(--light-text);
+            text-decoration: none;
+        }
+
+        .review-count:hover {
+            text-decoration: underline;
+            color: var(--primary-color);
+        }
+
+        .product-price-container {
+            margin-bottom: 20px;
+        }
+
+        .current-price {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .original-price {
+            font-size: 1.8rem;
+            color: var(--light-text);
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+
+        .save-amount {
+            display: inline-block;
+            background-color: #ffeee6;
+            color: #ff5722;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-left: 10px;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        .promotion-container {
+            margin-bottom: 25px;
+        }
+
+        .promotion-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .promotion-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .promotion-tag {
+            background: #ffe1e1;
+            color: #dc1b57;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px dashed;
+            font-size: 1.4rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .promotion-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(220, 27, 87, 0.2);
+        }
+
+        .stock-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .in-stock {
+            color: #4CAF50;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+
+        .in-stock i {
+            margin-right: 5px;
+        }
+
+        .shipping-container {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .shipping-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .shipping-title i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+
+        .shipping-option {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .shipping-location-selector {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1.5rem;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .shipping-note {
+            font-size: 1.3rem;
+            color: var(--light-text);
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .quantity-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .quantity-label {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-right: 15px;
+        }
+
+        .quantity-counter {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .quantity-btn:hover {
+            background-color: #f5f5f5;
+        }
+
+        .quantity-input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            border: none;
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .action-button {
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            transition: all 0.3s;
+        }
+
+        .add-to-cart {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .buy-now {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .action-button i {
+            margin-right: 8px;
+        }
+
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .feature-badge {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            font-size: 1.4rem;
+        }
+
+        .feature-badge i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+
+        /* Product specifications */
+        .product-specs {
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            color: #333;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .specs-table tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .specs-table td {
+            padding: 12px 15px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 500;
+            width: 30%;
+        }
+
+        /* Product description */
+        .product-description {
+            margin-top: 40px;
+        }
+
+        .description-content {
+            font-size: 1.6rem;
+            line-height: 1.7;
+        }
+
+        .description-content p {
+            margin-bottom: 15px;
+        }
+
+        .description-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        /* Related products */
+        .related-products {
+            margin-top: 60px;
+        }
+
+        .product-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .product-card-info {
+            padding: 15px;
+        }
+
+        .product-card-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-card-price {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .product-card-rating {
+            color: #FFB800;
+            font-size: 1.4rem;
+        }
+
+        /* Customer reviews */
+        .customer-reviews {
+            margin-top: 60px;
+        }
+
+        .rating-summary {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .average-rating {
+            font-size: 5rem;
+            font-weight: 700;
+            color: #333;
+            margin-right: 30px;
+        }
+
+        .rating-bars {
+            flex: 1;
+        }
+
+        .rating-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .rating-label {
+            font-size: 1.4rem;
+            width: 50px;
+        }
+
+        .rating-progress {
+            flex: 1;
+            height: 8px;
+            background-color: #eee;
+            border-radius: 4px;
+            margin: 0 10px;
+            overflow: hidden;
+        }
+
+        .rating-progress-fill {
+            height: 100%;
+            background-color: #FFB800;
+        }
+
+        .rating-count {
+            font-size: 1.4rem;
+            color: var(--light-text);
+            width: 40px;
+            text-align: right;
+        }
+
+        .review-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .reviewer-name {
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+
+        .review-date {
+            font-size: 1.4rem;
+            color: var(--light-text);
+        }
+
+        .review-rating {
+            color: #FFB800;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .review-content {
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .review-images {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .review-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 4px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .review-more {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .load-more-btn {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 6px;
+            font-size: 1.6rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .load-more-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer */
+        .hotline {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 40px 20px;
+            max-width: 1200px;
+            font-size: 1.5rem;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+
+        .hotline li {
+            list-style: none;
+            flex: 1 1 calc(25% - 20px);
+            box-sizing: border-box;
+            margin: 10px;
+        }
+
+        .hotline a {
+            text-decoration: none;
+            color: #333;
+            display: inline-block;
+            padding: 5px 0;
+            transition: all 0.2s;
+        }
+
+        .hotline h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            color: #222;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .hotline h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .hotline a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .lienhe a img,
+        .thanhtoan a img {
+            width: 30px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .last-one {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .last-one input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-size: 1.4rem;
+        }
+
+        .last-one button {
+            padding: 10px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 1.4rem;
+        }
+
+        .ketnoi {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .ketnoi img {
+            width: 35px;
+            height: 35px;
+            transition: transform 0.3s;
+            border-radius: 50%;
+        }
+
+        .ketnoi img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive Adjustments */
+        @media(max-width: 1200px) {
+            html {
+                font-size: 55%;
+            }
+
+            .product-container {
+                margin: 10px;
+                padding: 20px;
+            }
+        }
+
+        @media(max-width: 990px) {
+
+            .header-1,
+            .header-2,
+            .header-3 {
+                padding: 2rem;
+            }
+
+            .product-main {
+                flex-direction: column;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media(max-width: 768px) {
+            #menu-bar {
+                display: initial;
+            }
+
+            .header-3 .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #eee;
+                padding: 1rem 2rem;
+                border-top: .1rem solid rgba(0, 0, 0, .3);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            }
+
+            .header-3 .navbar.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            .header-3 .navbar a {
+                display: block;
+                margin: 1.5rem 0;
+                padding: 1.5rem;
+                border-radius: .5rem;
+                border: .1rem solid rgba(0, 0, 0, .3);
+                background: white;
+                text-align: center;
+            }
+
+            .header-2 {
+                flex-flow: column;
+            }
+
+            .header-2 .search-bar-container {
+                width: 100%;
+                margin-top: 2rem;
+            }
+
+            .product-cards {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .rating-summary {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .average-rating {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media(max-width: 450px) {
+            html {
+                font-size: 50%;
+            }
+
+            .header-1 {
+                display: none;
+            }
+
+            .feature-badges {
+                flex-direction: column;
+            }
+
+            .product-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<header>
+    <div class="header-1">
+        <div class="share">
+            <span>Đây là thông tin liên lạc của cửa hàng:</span>
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-google"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-tiktok"></a>
+        </div>
+    </div>
+
+    <div class="header-2">
+        <div style="display: flex; align-items: center;">
+            <img src="images/lakaka.png" alt="Logo có nền trong suốt" style="height: 100px;">
+            <span style="margin-left: 10px; font-size: 24px; font-weight: bold; color: white;">Cửa Hàng Quản Lí Điện
+                Tử</span>
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="Tìm kiếm...">
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+    </div>
+
+    <div class="header-3">
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <nav class="navbar" style="margin-left: auto;">
+            <a href="Trangchu.html">Trang chủ</a>
+            <div class="dropdown">
+                <a href="sanpham.html" class="dropbtn">Các loại linh kiện <span class="fas fa-chevron-down"></span></a>
+                <div class="dropdown-content">
+                    <a href="maytinh.html">Máy Tính</a>
+                    <a href="#dien-thoai">Điện Thoại</a>
+                    <a href="#tai-nghe">Tai Nghe</a>
+                    <a href="#Nhiều loại khác">Nhiều loại khác</a>
+                </div>
+            </div>
+            <a href="#sanphamhot">Sản phẩm hot</a>
+            <a href="#sanphamsale24h">Sản Phẩm sale 24h</a>
+            <a href="contact.html">Liên hệ <span class="fas fa-phone"></span></a>
+        </nav>
+
+        <div class="icons">
+            <a href="giohang.html" class="fas fa-shopping-cart"></a>
+            <a href="vitri.html" class="fas fa-store location"></a>
+            <div class="dropdown">
+                <a href="#" class="fas fa-user-circle" onclick="toggleDropdown()"></a>
+                <div id="dropdownContent" class="dropdown-content">
+                    <a href="dangnhap.html">Đăng nhập</a>
+                    <a href="dangky.html">Đăng ký</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<p class="header-notice">Liên Hệ ONLINE - GỌI NGAY 0342518197 - Cửa hàng điện tử</p>
+
+<div class="product-container">
+    <!-- Breadcrumb navigation -->
+    <ul class="breadcrumb">
+        <li><a href="Trangchu.html">Trang chủ</a></li>
+        <li><a href="sanpham.html">Điện thoại</a></li>
+        <li><a href="#">Iphone</a></li>
+        <li>Iphone 14 pro max</li>
+    </ul>
+
+    <div class="product-main">
+        <!-- Product gallery -->
+        <div class="product-gallery">
+            <img id="main-product-image" class="main-image" src="images/ip1.jpg" alt="Lenovo LOQ Gaming Laptop">
+            <div class="thumbnail-container">
+                <img class="thumbnail active" src="images/ip1.jpg" onclick="changeImage('images/laptop1.jpg', this)"
+                    alt="Lenovo LOQ Front View">
+                <img class="thumbnail" src="images/ip2.jpg" onclick="changeImage('images/ip2.jpg', this)"
+                    alt="Lenovo LOQ Side View">
+                <img class="thumbnail" src="images/ip3.jpg" onclick="changeImage('images/ip4.jpg', this)"
+                    alt="Lenovo LOQ Back View">
+                <img class="thumbnail" src="images/ip4.jpg" onclick="changeImage('images/ip4.jpg', this)"
+                    alt="Lenovo LOQ Open View">
+            </div>
+        </div>
+
+        <!-- Product info -->
+        <div class="product-info">
+            <h1 class="product-name">Iphone 14 pro max 1T GB</h1>
+
+            <div class="product-ratings">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="#reviews" class="review-count">152 đánh giá</a>
+            </div>
+
+            <div class="product-price-container">
+                <span class="current-price">26.000.000₫</span>
+                <span class="original-price">27.500.000₫</span>
+                <span class="save-amount">Tiết kiệm: 1.500.000₫</span>
+            </div>
+
+            <div class="promotion-container">
+                <h3 class="promotion-title">Khuyến mãi đặc biệt:</h3>
+                <div class="promotion-tags">
+                    <span class="promotion-tag"><i class="fas fa-tag"></i> Giảm 1.000.000₫</span>
+                    <span class="promotion-tag"><i class="fas fa-gift"></i> Tặng balo gaming</span>
+                    <span class="promotion-tag"><i class="fas fa-percentage"></i> Trả góp 0%</span>
+                    <span class="promotion-tag"><i class="fas fa-shield-alt"></i> Bảo hành 24 tháng</span>
+                </div>
+            </div>
+
+            <div class="stock-info">
+                <span class="in-stock"><i class="fas fa-check-circle"></i> Còn hàng</span>
+                <span style="margin-left: 15px;">SKU: LOQ-G15-4050</span>
+            </div>
+
+            <div class="shipping-container">
+                <h3 class="shipping-title"><i class="fas fa-truck"></i> Thông tin vận chuyển</h3>
+                <div class="shipping-option">
+                    <span><i class="fas fa-check"></i> Miễn phí giao hàng khu vực TP.Đà Nẵng</span>
+                </div>
+                <select class="shipping-location-selector" name="shipping">
+                    <option value="Da Nang">Đà Nẵng</option>
+                    <option value="HCM">TP Hồ Chí Minh</option>
+                    <option value="HN">TP Hà Nội</option>
+                    <option value="Other">Tỉnh thành khác</option>
+                </select>
+                <p class="shipping-note">Phí giao hàng miễn phí cho đơn hàng trên 500,000₫</p>
+            </div>
+
+            <form action="AddToCartServlet" method="post">
+                <div class="quantity-container">
+                    <span class="quantity-label">Số lượng:</span>
+                    <div class="quantity-counter">
+                        <button type="button" class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                        <input type="number" name="quantity" id="quantity-input" value="1" min="1"
+                            class="quantity-input" readonly>
+                        <button type="button" class="quantity-btn" onclick="increaseQuantity()">+</button>
+                    </div>
+                </div>
+
+                <input type="hidden" name="productId" value="101">
+                <input type="hidden" name="productName" value="Lenovo LOQ">
+                <input type="hidden" name="productPrice" value="28500000">
+
+                <div class="action-buttons">
+                    <button type="submit" class="action-button add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                    </button>
+                    <button type="button" class="action-button buy-now" onclick="buyNow()">
+                        <i class="fas fa-bolt"></i> Mua ngay
+                    </button>
+                </div>
+            </form>
+
+            <div class="feature-badges">
+                <div class="feature-badge">
+                    <i class="fas fa-sync"></i> Đổi trả trong 15 ngày
+                </div>
+                <div class="feature-badge">
+                    <i class="fas fa-shield-alt"></i> Hàng chính hãng 100%
+                </div>
+                <div class="feature-badge">
+                    <i class="fas fa-truck"></i> Vận chuyển toàn quốc
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product specifications -->
+    <div class="product-specs">
+        <h2 class="section-title">Thông số kỹ thuật</h2>
+        <table class="specs-table">
+            <tr>
+                <td>CPU</td>
+                <td>Intel Core i7-13700H (14 cores, up to 5.0GHz)</td>
+            </tr>
+            <tr>
+                <td>RAM</td>
+                <td>16GB DDR5 5200MHz (2 x 8GB)</td>
+            </tr>
+            <tr>
+                <td>Ổ cứng</td>
+                <td>512GB SSD M.2 PCIe NVMe</td>
+            </tr>
+            <tr>
+                <td>Card đồ họa</td>
+                <td>NVIDIA GeForce RTX 4050 6GB GDDR6</td>
+            </tr>
+            <tr>
+                <td>Màn hình</td>
+                <td>15.6" FHD (1920 x 1080), 144Hz, IPS, 350 nits, Anti-glare</td>
+            </tr>
+            <tr>
+                <td>Hệ điều hành</td>
+                <td>Windows 11 Home</td>
+            </tr>
+            <tr>
+                <td>Pin</td>
+                <td>60Wh, đi kèm bộ sạc 170W</td>
+            </tr>
+            <tr>
+                <td>Trọng lượng</td>
+                <td>2.4 kg</td>
+            </tr>
+            <tr>
+                <td>Kích thước</td>
+                <td>359.6 x 264.8 x 22.1-25.2 mm</td>
+            </tr>
+            <tr>
+                <td>Cổng kết nối</td>
+                <td>2 x USB-A 3.2 Gen 1, 1 x USB-C 3.2 Gen 2 (Display Port 1.4), 1 x HDMI 2.1, 1 x RJ45, 1 x 3.5mm audio
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Product description -->
+    <div class="product-description">
+        <h2 class="section-title">Mô tả sản phẩm</h2>
+        <div class="description-content">
+            <p>Laptop Lenovo LOQ là lựa chọn hoàn hảo cho game thủ mới bắt đầu hoặc người dùng cần một chiếc máy mạnh mẽ
+                cho công việc sáng tạo với mức giá hợp lý. Được trang bị bộ vi xử lý Intel Core i7 thế hệ mới nhất và
+                card đồ họa NVIDIA GeForce RTX 4050, LOQ mang đến hiệu năng mạnh mẽ cho các tựa game thịnh hành và các
+                tác vụ đòi hỏi hiệu năng cao.</p>
+
+            <p>Màn hình FHD 144Hz với độ phủ màu 100% sRGB giúp trải nghiệm game và xem phim trở nên sống động hơn bao
+                giờ hết. Hệ thống tản nhiệt Coldfront được thiết kế độc quyền bởi Lenovo đảm bảo máy luôn mát mẻ trong
+                mọi điều kiện sử dụng.</p>
+
+            <p>Bàn phím chơi game với đèn nền RGB và hệ thống âm thanh Nahimic Audio mang đến trải nghiệm giải trí đỉnh
+                cao. Thiết kế mỏng nhẹ và pin dung lượng lớn cho phép bạn làm việc và giải trí mọi lúc mọi nơi.</p>
+
+            <h3 style="font-size: 1.8rem; margin: 20px 0 10px;">Những tính năng nổi bật:</h3>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 1.6rem; line-height: 1.7;">
+                <li>NVIDIA GeForce RTX 4050 với công nghệ ray tracing thế hệ mới</li>
+                <li>Màn hình IPS 144Hz cho hình ảnh mượt mà, không bị xé hình</li>
+                <li>Bộ vi xử lý Intel Core i7 thế hệ 13 mạnh mẽ</li>
+                <li>RAM DDR5 tốc độ cao và SSD PCIe gen 4 cực nhanh</li>
+                <li>Hệ thống tản nhiệt hiệu quả với công nghệ Coldfront</li>
+                <li>Bàn phím chơi game với đèn nền RGB</li>
+                <li>Wi-Fi 6E và Bluetooth 5.1 cho kết nối nhanh chóng và ổn định</li>
+                <li>Hệ thống âm thanh Nahimic Audio chuyên dụng cho gaming</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Customer reviews -->
+    <div id="reviews" class="customer-reviews">
+        <h2 class="section-title">Đánh giá từ khách hàng</h2>
+
+        <div class="rating-summary">
+            <div class="average-rating">4.6</div>
+            <div class="rating-bars">
+                <div class="rating-bar">
+                    <span class="rating-label">5 sao</span>
+                    <div class="rating-progress">
+                        <div class="rating-progress-fill" style="width: 75%"></div>
+                    </div>
+                    <span class="rating-count">96</span>
+                </div>
+                <div class="rating-bar">
+                    <span class="rating-label">4 sao</span>
+                    <div class="rating-progress">
+                        <div class="rating-progress-fill" style="width: 15%"></div>
+                    </div>
+                    <span class="rating-count">19</span>
+                </div>
+                <div class="rating-bar">
+                    <span class="rating-label">3 sao</span>
+                    <div class="rating-progress">
+                        <div class="rating-progress-fill" style="width: 7%"></div>
+                    </div>
+                    <span class="rating-count">9</span>
+                </div>
+                <div class="rating-bar">
+                    <span class="rating-label">2 sao</span>
+                    <div class="rating-progress">
+                        <div class="rating-progress-fill" style="width: 2%"></div>
+                    </div>
+                    <span class="rating-count">3</span>
+                </div>
+                <div class="rating-bar">
+                    <span class="rating-label">1 sao</span>
+                    <div class="rating-progress">
+                        <div class="rating-progress-fill" style="width: 1%"></div>
+                    </div>
+                    <span class="rating-count">1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-list">
+            <div class="review-item">
+                <div class="review-header">
+                    <span class="reviewer-name">Nguyễn Văn A</span>
+                    <span class="review-date">15/05/2025</span>
+                </div>
+                <div class="review-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="review-content">
+                    <p>Mình mua laptop này được 1 tháng và cực kỳ hài lòng. Chơi game mượt mà, nhiệt độ ổn định. Máy có
+                        thể chạy được hầu hết các game AAA ở mức setting cao. Pin cũng khá tốt so với một laptop gaming.
+                        Rất đáng đồng tiền bát gạo!</p>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="review-header">
+                    <span class="reviewer-name">Trần Thị B</span>
+                    <span class="review-date">10/05/2025</span>
+                </div>
+                <div class="review-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="review-content">
+                    <p>Máy có hiệu năng tốt, thiết kế đẹp. Điểm trừ là quạt hơi ồn khi chơi game nặng và thời lượng pin
+                        không như mong đợi. Tuy nhiên với mức giá này thì khá ổn.</p>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="review-header">
+                    <span class="reviewer-name">Lê Văn C</span>
+                    <span class="review-date">02/05/2025</span>
+                </div>
+                <div class="review-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="review-content">
+                    <p>RTX 4050 trên máy này xử lý tốt hầu hết các game hiện nay ở mức setting trung bình đến cao. Màn
+                        hình 144Hz thực sự làm nên sự khác biệt khi chơi game. Phím bấm có độ nảy tốt, touchpad nhạy.
+                        Nhân viên tư vấn và hỗ trợ nhiệt tình. Rất hài lòng!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-more">
+            <button class="load-more-btn">Xem thêm đánh giá</button>
+        </div>
+    </div>
+
+    <!-- Related products -->
+    <div class="related-products">
+        <h2 class="section-title">Sản phẩm tương tự</h2>
+        <div class="product-cards">
+            <div class="product-card">
+                <img src="images/samsunga30.jpg" alt="Laptop Asus" class="product-card-img">
+                <div class="product-card-info">
+                    <h3 class="product-card-title">Asus TUF Gaming F15</h3>
+                    <div class="product-card-price">27.990.000₫</div>
+                    <div class="product-card-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/iphone13.jpg" alt="Laptop Acer" class="product-card-img">
+                <div class="product-card-info">
+                    <h3 class="product-card-title">Acer Nitro 5</h3>
+                    <div class="product-card-price">25.490.000₫</div>
+                    <div class="product-card-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/dienthoai1.jpg" alt="Laptop MSI" class="product-card-img">
+                <div class="product-card-info">
+                    <h3 class="product-card-title">MSI Katana GF66</h3>
+                    <div class="product-card-price">30.990.000₫</div>
+                    <div class="product-card-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/dienthoai2.jpg" alt="Laptop HP" class="product-card-img">
+                <div class="product-card-info">
+                    <h3 class="product-card-title">HP Victus 15</h3>
+                    <div class="product-card-price">26.490.000₫</div>
+                    <div class="product-card-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="line" style="background-color: rgb(192, 194, 255); width: 100%; height: 5px;"></div>
+<div class="hotline">
+    <li>
+        <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+        <a href="#" style="color: #0043ff;">Hotline: <b>0397002733</b></a>
+        <a href="#">Các câu hỏi thường gặp</a>
+        <a href="#">Gửi yêu cầu hỗ trợ</a>
+        <a href="#">Hướng dẫn đặt hàng</a>
+        <a href="#">Phương thức vận chuyển</a>
+        <a href="#">Chính sách đổi trả</a>
+    </li>
+    <li class="g">
+        <h3>VỀ CHÚNG TÔI</h3>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Liên hệ</a>
+        <a href="#">Chính sách bảo mật</a>
+        <a href="#">Điều khoản sử dụng</a>
+        <a href="#">Bảo mật thông tin</a>
+        <a href="#">Tư vấn khách hàng</a>
+    </li>
+    <li>
+        <h3>HỢP TÁC VÀ LIÊN KẾT</h3>
+        <a href="https://linhkienchatluong.vn">linhkienchatluong.vn</a>
+        <a href="#">Liên Kết shop</a>
+        <div class="lienhe"></div>
+        <h3>THANH TOÁN</h3>
+        <div class="thanhtoan">
+            <a href="#"><img src="images/visa.png" alt="Visa"></a>
+            <a href="#"><img src="images/mastercard.png" alt="Mastercard"></a>
+            <a href="#"><img src="images/momo.png" alt="Momo"></a>
+            <a href="#"><img src="images/zalopay.png" alt="ZaloPay"></a>
+        </div>
+    </li>
+    <li>
+        <h3>CẬP NHẬT THÔNG TIN KHUYẾN MÃI</h3>
+        <div class="last-one">
+            <input type="email" placeholder="Nhập email của bạn">
+            <button id="c">Cập nhật</button>
+        </div>
+        <h3>KHIẾU NẠI GÓP Ý</h3>
+        <button
+            style="padding: 10px 15px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; font-size: 1.5rem;">0397002733</button>
+        <h3 style="margin-top: 20px;">KẾT NỐI</h3>
+        <div class="ketnoi">
+            <img src="images/facebook.png" alt="facebook">
+            <img src="images/instagram.png" alt="instagram">
+            <img src="images/gmail.png" alt="gmail">
+        </div>
+    </li>
+</div>
+
+<!-- JavaScript -->
+<script>
+    function toggleDropdown() {
+        document.getElementById('dropdownContent').classList.toggle('show');
+    }
+
+    window.onclick = function (event) {
+        if (!event.target.matches('.fas.fa-user-circle')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+    function changeImage(imageSrc, thumbnail) {
+        document.getElementById('main-product-image').src = imageSrc;
+
+        // Remove active class from all thumbnails
+        var thumbnails = document.getElementsByClassName('thumbnail');
+        for (var i = 0; i < thumbnails.length; i++) {
+            thumbnails[i].classList.remove('active');
+        }
+
+        // Add active class to clicked thumbnail
+        thumbnail.classList.add('active');
+    }
+
+    function increaseQuantity() {
+        var input = document.getElementById('quantity-input');
+        var value = parseInt(input.value, 10);
+        input.value = value + 1;
+    }
+
+    function decreaseQuantity() {
+        var input = document.getElementById('quantity-input');
+        var value = parseInt(input.value, 10);
+        if (value > 1) {
+            input.value = value - 1;
+        }
+    }
+
+    function buyNow() {
+        // Redirect to checkout page or show modal
+        alert('Chuyển đến trang thanh toán...');
+        // window.location.href = 'checkout.html';
+    }
+    // Khởi tạo giỏ hàng trong localStorage nếu chưa có
+    if (!localStorage.getItem('cart')) {
+        localStorage.setItem('cart', JSON.stringify([]));
+    }
+
+    // Cập nhật số lượng sản phẩm trong giỏ hàng
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart'));
+        document.getElementById('cartCount').textContent = cart.length;
+    }
+
+
+
+</script>
+</body>
+
+</html>

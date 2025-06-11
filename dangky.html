@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="icon" href="images/logo.png" type="Images/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --pink: #0099FF;
+
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            transition: all .2s linear
+        }
+
+        *::selection {
+            background: var(--pink);
+            color: white;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 7rem;
+
+        }
+
+        .m:hover {
+            color: #0099FF;
+        }
+
+        .header-1,
+        .header-2,
+        .header-3 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 9%;
+            background: var(--pink);
+
+        }
+
+        .navbar a {
+            padding: 14px 20px;
+            display: inline-block;
+            color: black;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .icons a {
+            text-decoration: none;
+            color: #000;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .show {
+            display: block;
+        }
+
+        /* Responsive layout */
+        @media screen and (max-width: 600px) {
+            .icons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .icons a {
+                margin: 5px 0;
+            }
+        }
+
+
+
+
+
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        .dropbtn {
+            display: flex;
+            align-items: center;
+        }
+
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+
+        .navbar a:hover {
+            background-color: #ddd;
+        }
+
+        .header-1 {
+            border-bottom: .1rem solid rgba(255, 255, 255, .2)
+        }
+
+        .header-3 {
+            background: white;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+            position: relative;
+            z-index: 10000;
+        }
+
+        .header-1 span {
+            font-weight: lighter;
+            color: white;
+            font-size: 1.7rem;
+        }
+
+        .header-1 a {
+            padding: 0 .7rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .header-1 a:hover {
+            color: yellow;
+
+        }
+
+        .header-2 .search-bar-container {
+            display: flex;
+            align-items: center;
+            width: 50rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, .2);
+            border-radius: .5rem;
+
+        }
+
+        .header-2 .search-bar-container #search-bar {
+            width: 100%;
+            background: none;
+            text-transform: none;
+            color: white;
+            font-size: 1.7rem;
+
+        }
+
+        .header-2 .search-bar-container #search-bar::placeholder {
+            text-transform: capitalize;
+            color: #ddd;
+
+        }
+
+        .header-2 .search-bar-container label {
+            color: white;
+            cursor: pointer;
+            font-size: 2rem;
+            padding: 0 .5rem;
+            margin-left: 410px;
+            margin-top: -18px;
+
+        }
+
+        .header-2 .search-bar-container label:hover {
+            color: yellow;
+        }
+
+        .header-3 .navbar a {
+            color: #333;
+            font-size: 2rem;
+            margin-right: 2rem;
+        }
+
+        .header-3 .icons a {
+            color: #333;
+            font-size: 2.5rem;
+            margin-right: 2rem;
+        }
+
+        .header-3 a:hover {
+            color: var(--pink);
+        }
+
+        #menu-bar {
+            font-size: 3rem;
+            color: #333;
+            border: .1rem solid #333;
+            border-radius: .5rem;
+            padding: .5rem 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        .header-notice {
+            text-transform: uppercase;
+            text-align: center;
+            padding: 6px;
+            margin-bottom: 0;
+            color: #ff3b3d;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            unicode-bidi: isolate;
+        }
+
+
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 35px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 500px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px;
+
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 40px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"] {
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #8db7d3;
+            color: #fff1b7;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: palevioletred;
+        }
+
+        .hotline {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 1200px;
+            font-size: 15px;
+        }
+
+        .hotline li {
+            list-style: none;
+            flex: 1 1 calc(25% - 20px);
+            box-sizing: border-box;
+            margin: 10px;
+        }
+
+        .hotline a {
+            text-decoration: none;
+            color: black;
+
+        }
+
+        .hotline h3 {
+            margin-top: 0;
+        }
+
+        .lienhe a img,
+        .thanhtoan a img {
+            width: 30px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+
+            .last-container li,
+            .hotline li {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .last-container li,
+            .hotline li {
+                flex: 1 1 100%;
+            }
+
+            .lienhe a img,
+            .thanhtoan a img {
+                width: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .box-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box {
+                width: 80%;
+            }
+
+            .heading {
+                font-size: 24px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .category h2 {
+                font-size: 18px;
+                margin-left: 15px;
+            }
+        }
+
+        @media(max-width:1200px) {
+
+            html {
+                font-size: 55%;
+            }
+        }
+
+        @media(max-width:990px) {
+
+            .header-1,
+            .header-2,
+            .header-3 {
+                padding: 2rem;
+            }
+        }
+
+        @media(max-width:768px) {
+            #menu-bar {
+                display: initial;
+            }
+
+            .header-3 .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #eee;
+                padding: 1rem 2rem;
+                border-top: .1rem solid rgba(0, 0, 0, .3);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0)
+            }
+
+            .header-3 .navbar.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            .header-3 .navbar a {
+                display: block;
+                margin: 1.5rem 0;
+                padding: 1.5rem;
+                border-radius: .5rem;
+                border: .1rem solid rgba(0, 0, 0, .3);
+                background: white;
+                text-align: center;
+
+            }
+
+            .header-2 {
+                flex-flow: column;
+
+            }
+
+            .header-2 .search-bar-container {
+                width: 100%;
+                margin-top: 2rem;
+
+            }
+        }
+
+        @media(max-width:450px) {
+
+            html {
+                font-size: 50%;
+            }
+
+            .header-1 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slideshow-container {
+                max-width: 100%;
+            }
+
+            .mySlides img {
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slideshow-container {
+                max-width: 100%;
+            }
+
+            .mySlides img {
+                height: auto;
+            }
+        }
+
+        .hotline a:hover {
+            color: #f47a7c;
+        }
+
+        .ketnoi {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            background-color: rgb(216, 212, 212);
+            margin-right: 1000px;
+        }
+
+        .ketnoi img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+
+        .ketnoi img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<header>
+
+    <div class="header-1">
+        <div class="share">
+            <span>Đây là thông tin liên lạc của cửa hàng:</span>
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-google"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-tiktok"></a>
+        </div>
+
+    </div>
+
+    <div class="header-2">
+        <div style="display: flex; align-items: center;">
+            <img src="images/lakaka.png" alt="Logo có nền trong suốt" style="height: 100px;">
+            <span style="margin-left: 10px; font-size: 24px; font-weight: bold;">Cửa Hàng Quản Lí Điện Tử</span>
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="Tìm kiếm...">
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+    </div>
+    <div class="header-3">
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <nav class="navbar" style="margin-left: auto;">
+            <a href="Trangchu.html">Trang chủ</a>
+            <div class="dropdown">
+                <a href="sanpham.html" class="dropbtn">Các loại linh kiện <span class="fas fa-chevron-down"></span></a>
+                <div class="dropdown-content">
+                    <a href="#may-tinh">Máy Tính</a>
+                    <a href="#dien-thoai">Điện Thoại</a>
+                    <a href="#tai-nghe">Hoa Tulip</a>
+                    <a href="#Nhiều loại khác">Nhiều loại khác</a>
+
+                </div>
+            </div>
+            <a href="#sanphamhot">Sản phẩm hot</a>
+            <a href="#sanphamsale24h">Sản Phẩm sale 24h</a>
+
+            <a href="contact.html">Liên hệ <span class="fas fa-phone"></span></a>
+        </nav>
+
+        <div class="icons">
+            <a href="giohang.html" class="fas fa-shopping-cart"></a>
+            <a href="vitri.html" class="fas fa-store location"></a>
+            <div class="dropdown">
+                <a href="#" class="fas fa-user-circle" onclick="toggleDropdown()"></a>
+                <div id="dropdownContent" class="dropdown-content">
+                    <a href="dangnhap.html">Đăng nhập</a>
+                    <a href="dangky.html">Đăng ký</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</header>
+
+<script>
+    function toggleDropdown() {
+        document.getElementById('dropdownContent').classList.toggle('show');
+    }
+    window.onclick = function (event) {
+        if (!event.target.matches('.fas.fa-user-circle')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+
+<p class="header-notice" style="font-size: 25px;">Liên Hệ ONLINE - GỌI NGAY 0342518197 - Cửa hàng điện tử </p>
+
+<script src="javascript.js"></script>
+
+
+
+<body>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <b style="font-size: 40px;">Đăng ký tài khoản</b>
+        <p style="font-size: 20px;">Nếu bạn đã có tài khoản với chúng tôi, vui lòng đăng nhập tại<a href="dangnhap.html"
+                style="color: rgb(131, 112, 216);"> trang đăng nhập</a>.</p>
+        <p style="font-size: 20px;">Thông tin cá nhân của bạn:</p>
+    </div>
+    <div class="container">
+        <h2>Đăng Ký</h2>
+        <form action="#" method="POST">
+            <label for="fullname">Họ và Tên:</label>
+            <input style="font-size: 18px;" type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email:</label>
+            <input style="font-size: 18px;" type="email" id="email" name="email" required>
+
+            <label for="phone">Số điện thoại:</label>
+            <input style="font-size: 18px;" type="tel" id="phone" name="phone">
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="agree" name="agree" value="yes">
+                <label style="font-size: 20px;" for="agree">Tôi đã đọc và đồng ý với <b><a href="#"><span
+                                style="color:rgb(126, 112, 216);">Điều khoản & Điều kiện</span></b></a></label>
+            </div>
+
+            <input type="submit" style="font-size: 20px;" value="Đăng Ký">
+
+        </form>
+
+    </div>
+    </section>
+
+
+    <form action="last" style="background-color: rgb(212, 212, 216);">
+        <div class="line" style="background-color: rgb(192, 194, 255); width: 100%; height: 5px;"></div>
+        <div class="last-container">
+
+        </div>
+        <div>
+            <div class="hotline">
+
+                <li>
+                    h3>HỖ TRỢ KHÁCH HÀNG</h3><br>
+                    <a href="#" style="color: #0043ff;">Hot line: <b>0397002733</b></a><br>
+                    <a href="#">Các câu hỏi thường gặp</a><br>
+                    <a href="#">Gửi yêu cầu hỗ trợ</a><br>
+                    <a href="#">Hướng dẫn đặt hàng</a><br>
+                    <a href="#">Phương thức vận chuyển</a><br>
+                    <a href="#">Chính sách đổi trả</a><br>
+                </li>
+                <li class="g">
+                    <h3>VỀ CHÚNG TÔI</h3><br>
+                    <a href="#">Giới thiệu</a><br>
+                    <a href="#">Liên hệ</a><br>
+                    <a href="#">Chính sách bảo mật</a><br>
+                    <a href="#">Điều khoản sử dụng</a><br>
+                    <a href="#">Bảo mật thông tin </a><br>
+                    <a href="#">Tư vấn khách hàng</a>
+                </li>
+                <li>
+                    <h3>HỢP TÁC VÀ LIÊN KẾT</h3><br>
+                    <a href="https://linhkienchatluong.vn">https://linhkienchatluong.vn</a><br>
+                    <a href="#">Liên Kết shop</a><br>
+                    <div class="lienhe">
+
+                    </div>
+                    <h3>THANH TOÁN</h3>
+                    <div class="thanhtoan">
+                        <a href="#"><img src="/WebMiPham/visa.png" alt=""></a>
+                        <a href="#"><img src="/WebMiPham/atm-card.png" alt=""></a>
+                    </div>
+                </li>
+                <li>
+                    <h3>CẬP NHẬT THÔNG TIN KHUYẾN MÃI</h3><br>
+                    <div class="last-one">
+                        <input type="email" placeholder="Nhập email của bạn">
+                        <button id="c">Cập nhật</button><br>
+                    </div>
+                    <br>
+                    <h3>KHIẾU NẠI GÓP Ý</h3><br>
+                    <button>0397002733</button><br>
+                </li>
+                <h3>KẾT NỐI</h3>
+                <div class="ketnoi">
+                    <img src="images/facebook.png" alt="facebook">
+                    <img src="images/instagram.png" alt="instagram">
+                    <img src="images/gmail.png" alt="gmail">
+
+                </div>
+
+            </div>
+    </form>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+    </script>
+    <div class="space"></div>
+</body>
+
+</html>

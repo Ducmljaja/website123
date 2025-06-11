@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa hàng hoa</title>
+    <link rel="icon" href="images/logo.png" type="Images/x-icon">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-1">
+            <div class="share">
+                <span>Đây là thông tin liên lạc của cửa hàng:</span>
+                <a href="#" class="fab fa-facebook"></a>
+                <a href="#" class="fab fa-google"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-tiktok"></a>
+            </div>
+
+        </div>
+
+        <div class="header-2">
+            <div style="display: flex; align-items: center;">
+                <img src="images/lakaka.png" alt="Logo có nền trong suốt" style="height: 100px;">
+                <span style="margin-left: 10px; font-size: 24px; font-weight: bold;">Cửa Hàng Quản Lí Điện Tử</span>
+            </div>
+
+            <form action="" class="search-bar-container">
+                <input type="search" id="search-bar" placeholder="Tìm kiếm...">
+                <label for="search-bar" class="fas fa-search"></label>
+            </form>
+        </div>
+        <div class="header-3">
+            <div id="menu-bar" class="fas fa-bars"></div>
+            <nav class="navbar" style="margin-left: auto;">
+                <a href="Trangchu.html">Trang chủ</a>
+                <div class="dropdown">
+                    <a href="sanpham.html" class="dropbtn">Các loại linh kiện <span
+                            class="fas fa-chevron-down"></span></a>
+                    <div class="dropdown-content">
+                        <a href="#may-tinh">Máy Tính</a>
+                        <a href="#dien-thoai">Điện Thoại</a>
+                        <a href="#tai-nghe">Tai Nghe</a>
+                        <a href="#Nhiều loại khác">Nhiều loại khác</a>
+
+                    </div>
+                </div>
+                <a href="#sanphamhot">Sản phẩm hot</a>
+                <a href="#sanphamsale24h">Sản Phẩm sale 24h</a>
+
+                <a href="contact.html">Liên hệ <span class="fas fa-phone"></span></a>
+            </nav>
+
+            <div class="icons">
+                <a href="giohang.html" class="fas fa-shopping-cart"></a>
+                <a href="vitri.html" class="fas fa-store location"></a>
+                <div class="dropdown">
+                    <a href="#" class="fas fa-user-circle" onclick="toggleDropdown()"></a>
+                    <div id="dropdownContent" class="dropdown-content">
+                        <a href="dangnhap.html">Đăng nhập</a>
+                        <a href="dangky.html">Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </header>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById('dropdownContent').classList.toggle('show');
+        }
+        window.onclick = function (event) {
+            if (!event.target.matches('.fas.fa-user-circle')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <p class="header-notice" style="font-size: 25px;">Liên Hệ ONLINE - GỌI NGAY 0342518197 - Cửa hàng điện tử </p>
+
+    <script src="javascript.js"></script>
+
+
+
+    <body>
+        <div class="container">
+            <header>
+                <h1>Vị trí của chúng tôi</h1>
+                <p>Tìm đường đến với chúng tôi một cách dễ dàng</p>
+            </header>
+
+            <div class="location-info">
+                <div class="map-container">
+                    <!-- Nhúng Google Maps -->
+                    <iframe id="store-map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.096484299135!2d105.7801083154026!3d21.02882079315394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab86cece9ac1%3A0xa9bc04e04602dd85!2zRlBUIEFwdGVjaCBIw6AgTuG7mWk!5e0!3m2!1svi!2s!4v1629987217972!5m2!1svi!2s&zoom=20"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <div class="details">
+                    <h2>Địa chỉ cụ thể</h2>
+                    <p><strong>Tên địa điểm:</strong> Công ty ABC</p>
+                    <p><strong>Địa chỉ:</strong> 123 Đường XYZ, Phường ABC, Quận DEF, Thành phố Hà Nội</p>
+
+                    <div class="contact-info">
+                        <h2>Thông tin liên hệ</h2>
+                        <p><strong>Điện thoại:</strong> 0123 456 789</p>
+                        <p><strong>Email:</strong> contact@abc.com</p>
+                        <p><strong>Giờ mở cửa:</strong> 8:00 - 17:00 (Thứ 2 - Thứ 6)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>Hướng dẫn đường đi</h2>
+                <p>Chúng tôi nằm ngay trung tâm thành phố, rất dễ tìm:</p>
+                <ul>
+                    <li>Từ quảng trường XYZ, đi theo hướng Bắc khoảng 500m</li>
+                    <li>Rẽ phải vào đường ABC</li>
+                    <li>Chúng tôi nằm ở bên tay trái, tòa nhà màu xanh</li>
+                </ul>
+            </div>
+        </div>
+        </section>
+
+
+        <form action="last" style="background-color: rgb(212, 212, 216);">
+            <div class="line" style="background-color: rgb(192, 194, 255); width: 100%; height: 5px;"></div>
+            <div class="last-container">
+
+            </div>
+            <div>
+                <div class="hotline">
+
+                    <li>
+                        h3>HỖ TRỢ KHÁCH HÀNG</h3><br>
+                        <a href="#" style="color: #0043ff;">Hot line: <b>0397002733</b></a><br>
+                        <a href="#">Các câu hỏi thường gặp</a><br>
+                        <a href="#">Gửi yêu cầu hỗ trợ</a><br>
+                        <a href="#">Hướng dẫn đặt hàng</a><br>
+                        <a href="#">Phương thức vận chuyển</a><br>
+                        <a href="#">Chính sách đổi trả</a><br>
+                    </li>
+                    <li class="g">
+                        <h3>VỀ CHÚNG TÔI</h3><br>
+                        <a href="#">Giới thiệu</a><br>
+                        <a href="#">Liên hệ</a><br>
+                        <a href="#">Chính sách bảo mật</a><br>
+                        <a href="#">Điều khoản sử dụng</a><br>
+                        <a href="#">Bảo mật thông tin </a><br>
+                        <a href="#">Tư vấn khách hàng</a>
+                    </li>
+                    <li>
+                        <h3>HỢP TÁC VÀ LIÊN KẾT</h3><br>
+                        <a href="https://linhkienchatluong.vn">https://linhkienchatluong.vn</a><br>
+                        <a href="#">Liên Kết shop</a><br>
+                        <div class="lienhe">
+
+                        </div>
+                        <h3>THANH TOÁN</h3>
+                        <div class="thanhtoan">
+                            <a href="#"><img src="/WebMiPham/visa.png" alt=""></a>
+                            <a href="#"><img src="/WebMiPham/atm-card.png" alt=""></a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>CẬP NHẬT THÔNG TIN KHUYẾN MÃI</h3><br>
+                        <div class="last-one">
+                            <input type="email" placeholder="Nhập email của bạn">
+                            <button id="c">Cập nhật</button><br>
+                        </div>
+                        <br>
+                        <h3>KHIẾU NẠI GÓP Ý</h3><br>
+                        <button>0397002733</button><br>
+                    </li>
+                    <h3>KẾT NỐI</h3>
+                    <div class="ketnoi">
+                        <img src="images/facebook.png" alt="facebook">
+                        <img src="images/instagram.png" alt="instagram">
+                        <img src="images/gmail.png" alt="gmail">
+
+                    </div>
+
+                </div>
+        </form>
+        <script>
+            var slideIndex = 0;
+            showSlides();
+        </script>
+        <div class="space"></div>
+    </body>
+
+</html>
+</body>
+
+</html>
